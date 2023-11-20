@@ -23,7 +23,9 @@ onMounted(() => {
 <template>
   <header class="header">
     <div class="container header__container">
-      <img class="header__logo" src="../assets/img/logo.svg" />
+      <router-link to="/" class="header__nav-link">
+        <img class="header__logo" src="../assets/img/logo.svg" />
+      </router-link>
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li v-if="showSearch" class="header__nav-item">
