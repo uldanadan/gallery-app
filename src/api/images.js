@@ -2,7 +2,7 @@ import axios from "axios";
 
 const base_url = 'https://api.unsplash.com';
 const username = 'uldanadan';
-const token = 'Bearer xiZTwOP_QAlwa8V6u-h3SwkZoQbVxygC6na3Q9qN6_c';
+const token = 'Bearer VQ0xq4KgyADSNXpgM1C_-IJ4AQN8cJ4yyjClV1DyFZo';
 const headers = {
     Authorization: token,
     'Cache-Control': 'no-cache'
