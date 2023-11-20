@@ -53,7 +53,7 @@ onMounted( () => loadImages());
   margin: 80px auto 71px;
   display: flex;
   justify-content: flex-end;
-  max-width: 1697px;
+  max-width: 1418px;
 
   button {
     background: none;
