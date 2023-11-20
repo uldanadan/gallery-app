@@ -3,7 +3,9 @@ import {loadLikedImages} from "../api/images";
 import {onMounted, ref} from "vue";
 import Loader from "../components/Loader.vue";
 import Empty from "../components/Empty.vue";
+import {useRouter} from "vue-router";
 
+const router = useRouter();
 const images = ref([]);
 const loading = ref(false);
 
@@ -14,6 +16,9 @@ onMounted( async () => {
       .finally(() => loading.value = false)
 });
 
+const openImageViewer = (image) => {
+  router.push(`/photo/${image.id}`);
+}
 </script>
 
 <template>
@@ -23,7 +28,7 @@ onMounted( async () => {
     <template v-else>
       <Empty v-if="!images?.length" />
       <div v-else class="container favorites__container">
-        <img v-for="image in images" :src="image.urls.regular" :alt="image.alt_description" />
+        <img v-for="image in images" :src="image.urls.regular" :alt="image.alt_description" @click="openImageViewer(image)" />
       </div>    </template>
   </div>
 </template>
@@ -32,6 +37,10 @@ onMounted( async () => {
   .favorites {
     text-align: center;
     border-top: 16px solid #c4c4c4;
+
+    & img {
+      cursor: pointer;
+    }
 
     &__title {
       font-size: 72px;
